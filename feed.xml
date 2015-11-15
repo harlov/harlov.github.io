@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Harlov Home blog</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://harlov.github.io/</link>
+    <atom:link href="http://harlov.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 15 Nov 2015 23:12:14 +0500</pubDate>
+    <lastBuildDate>Sun, 15 Nov 2015 23:12:14 +0500</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Создание python пакета</title>
+        <description>&lt;p&gt;Итак, мы написали полезную батарейку для питона(пусть она например, варит кофе) , и хотим поделится с ней миром. Какие шаги надо предпринять?&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;1. Структура.&lt;/h2&gt;
+
+&lt;p&gt;Перво наперво, надо определится со структорой пакета (назовем его для примера, hmakecoffee):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;hmakecoffee_project /
+	hmakecoffee /
+		__init__.py
+		main.py
+	setup.py
+	setup.cfg
+	README.md
+	LICENSE.md&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;В директорию hmakecoffe положим код модуля.
+Так же не забудем, для удобства импортировать все классы для внешнего использования ,в файле &lt;code&gt;__init__.py&lt;/code&gt; модуля.&lt;/p&gt;
+
+&lt;p&gt;Далее, разберемся с остальными файлами пакета.&lt;/p&gt;
+
+&lt;h3 id=&quot;setuppy&quot;&gt;setup.py&lt;/h3&gt;
+
+&lt;p&gt;Главный файл нашего модуля. Содержит всю основную мета-информацию о пакете,и файлах входящих в его состав.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#setup.py&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;setuptools&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;find_packages&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__file__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;README.md&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;README&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readme&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# allow setup.py to be run from any path&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normpath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;abspath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__file__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pardir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;hmakecoffee&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Название пакета&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;1.0.1&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#версия&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;packages&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# входящие в состав модуля пакеты - отдаем на откуп хелпера find_packages&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;include_package_data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;license&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;MTI License&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Указываем выбранную лицензию&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;test funny python packet&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#краткое описание пакета&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;long_description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;README&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#полное описание пакета - копируем, из файла README.md&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;https://github.com/harlov/hmakecoffee&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# домашняя страница пакета - пока оставим адрес репозитория.&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;download_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;https://github.com/harlov/hmakecoffee/archive/v1.0.1.tar.gz&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# адрес для скачивания пакета&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Nikita Harlov&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;author_email&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;nikita@harlov.com&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;classifiers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; 
+        &lt;span class=&quot;s&quot;&gt;&amp;#39;Environment :: Console&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&amp;#39;Intended Audience :: Developers&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&amp;#39;License :: OSI Approved :: MIT License&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&amp;#39;Operating System :: OS Independent&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&amp;#39;Programming Language :: Python&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&amp;#39;Programming Language :: Python :: 3&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&amp;#39;Programming Language :: Python :: 3.2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&amp;#39;Programming Language :: Python :: 3.3&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&amp;#39;Programming Language :: Python :: 3.4&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&amp;#39;Topic :: Education&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;#для удобства использования , забиндим вызов сервиса на комманду hmakecoffee-cli&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;entry_points&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;console_scripts&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&amp;#39;hmakecoffee-cli = hmakecoffee.__main__:main&amp;#39;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;setupcfg&quot;&gt;setup.cfg&lt;/h3&gt;
+&lt;p&gt;Файл нужен в основном для pypi, что бы он знал откуда взять описание.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cfg&quot; data-lang=&quot;cfg&quot;&gt;&lt;span class=&quot;k&quot;&gt;[metadata]&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description-file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;README.md&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;readmemd&quot;&gt;README.md&lt;/h3&gt;
+
+&lt;p&gt;В readme, укажем основную информацию о нашем чудо-пакете, а так же способы установки, и использования: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# HMakeCoffee, version 1.0.0
+
+It&#39;s ready for production use in coffee machines!
+
+Install:
+ 	pip install hmakecoffee
+
+To use:
+
+## 1 In console:
+
+hmakecoffee-cli
+
+## 2 As library:
+
+from hmakecoffe import MakeCoffeeService
+
+hms = MakeCoffeeService()
+
+hms.get_cup()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;2. Публикуем пакет&lt;/h2&gt;
+
+&lt;p&gt;Чтобы публиковать пакеты для pip, нужно зарегаться на сервере &lt;a href=&quot;https://pypi.python.org/pypi&quot;&gt;pypi&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Дале, что бы не вводить постоянно логин-пасс при деплоее пакета, вынесем их в конфигурационный файл &lt;code&gt;~/.pypirc&lt;/code&gt; :&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cfg&quot; data-lang=&quot;cfg&quot;&gt;&lt;span class=&quot;k&quot;&gt;[distutils]&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;index-servers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;  pypi&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;  pypitest&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;[pypi]&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;repository:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;https://pypi.python.org/pypi&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;username:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#имя пользователя&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;password:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#пароль&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;[pypitest]&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;repository:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;https://testpypi.python.org/pypi&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;username:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#имя пользователя&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;password:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#пароль&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Обратите внимание, мы определяем два сервера : основной &lt;code&gt;pypi&lt;/code&gt;, и тестовый &lt;code&gt;pypitest&lt;/code&gt;, так что для начала, выложим наш пакет на тест-сервер :&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;python setup.py register -r pypitest &lt;span class=&quot;c&quot;&gt;#регистрируем пакет&lt;/span&gt;
+python setup.py sdist upload -r pypitest &lt;span class=&quot;c&quot;&gt;# выкладываем.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Затем заходим, проверяем что он корректно выложился, и пушим на основной сервер :&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;python setup.py register -r pypi
+python setup.py sdist upload -r pypi&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Готово! Вы - восхитительны!&lt;/p&gt;
+
+&lt;!-- 
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+
+[jekyll]:      http://jekyllrb.com
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-help]: https://github.com/jekyll/jekyll-help --&gt;
+</description>
+        <pubDate>Sat, 14 Nov 2015 22:48:37 +0500</pubDate>
+        <link>http://harlov.github.io/python/pip/2015/11/14/python-create-packet.html</link>
+        <guid isPermaLink="true">http://harlov.github.io/python/pip/2015/11/14/python-create-packet.html</guid>
+        
+        
+        <category>python</category>
+        
+        <category>pip</category>
+        
+      </item>
+    
+  </channel>
+</rss>
