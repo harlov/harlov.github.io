@@ -6,17 +6,17 @@
 </description>
     <link>http://harlov.github.io/</link>
     <atom:link href="http://harlov.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 15 Nov 2015 23:12:14 +0500</pubDate>
-    <lastBuildDate>Sun, 15 Nov 2015 23:12:14 +0500</lastBuildDate>
+    <pubDate>Sun, 15 Nov 2015 23:14:57 +0500</pubDate>
+    <lastBuildDate>Sun, 15 Nov 2015 23:14:57 +0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
         <title>Создание python пакета</title>
-        <description>&lt;p&gt;Итак, мы написали полезную батарейку для питона(пусть она например, варит кофе) , и хотим поделится с ней миром. Какие шаги надо предпринять?&lt;/p&gt;
+        <description>&lt;p&gt;Итак, мы написали полезную батарейку для питона(пусть она например, варит кофе) , и хотим поделиться с ней миром. Какие шаги надо предпринять?&lt;/p&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;1. Структура.&lt;/h2&gt;
 
-&lt;p&gt;Перво наперво, надо определится со структорой пакета (назовем его для примера, hmakecoffee):&lt;/p&gt;
+&lt;p&gt;Перво-наперво, надо определится со структорой пакета (назовем его для примера, hmakecoffee):&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;hmakecoffee_project /
 	hmakecoffee /
