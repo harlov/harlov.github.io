@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Создание python пакета</title>
-    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-">
+    <title>Создание python-пакета</title>
+    <meta name="description" content="Домашний блог Никиты Харлова">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://harlov.github.io/python/pip/2015/11/14/python-create-packet.html">
+    <link rel="canonical" href="http://blog.harlov.com/python/pip/2015/11/14/python-create-packet.html">
 </head>
 
 
@@ -62,7 +61,7 @@
       <div class="trigger">
         
           
-          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/about/">Обо мне</a>
           
         
           
@@ -84,16 +83,16 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Создание python пакета</h1>
+    <h1 class="post-title">Создание python-пакета</h1>
     <p class="post-meta">Nov 14, 2015</p>
   </header>
 
   <article class="post-content">
-    <p>Итак, мы написали полезную батарейку для питона(пусть она например, варит кофе) , и хотим поделиться с ней миром. Какие шаги надо предпринять?</p>
+    <p>Итак, мы написали полезную батарейку для питона(пусть она, например, варит кофе) , и хотим поделиться с ней миром. Какие шаги надо предпринять?</p>
 
 <h2 id="section">1. Структура.</h2>
 
-<p>Перво-наперво, надо определится со структорой пакета (назовем его для примера, hmakecoffee):</p>
+<p>Перво-наперво, надо определиться со структурой пакета (назовем его, для примера, <code>hmakecoffee</code>):</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">hmakecoffee_project /
 	hmakecoffee /
@@ -105,13 +104,13 @@
 	LICENSE.md</code></pre></div>
 
 <p>В директорию hmakecoffe положим код модуля.
-Так же не забудем, для удобства импортировать все классы для внешнего использования ,в файле <code>__init__.py</code> модуля.</p>
+Также не забудем импортировать все классы для внешнего использования в файл <code>__init__.py</code> модуля.</p>
 
-<p>Далее, разберемся с остальными файлами пакета.</p>
+<p>Далее, разберемся с остальными состовляющими пакета.</p>
 
 <h3 id="setuppy">setup.py</h3>
 
-<p>Главный файл нашего модуля. Содержит всю основную мета-информацию о пакете,и файлах входящих в его состав.</p>
+<p>Точка входа нашего модуля. Содержит всю основную мета-информацию о пакете и файлах, входящих в его состав.</p>
 
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#setup.py</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -156,14 +155,14 @@
 <span class="p">)</span></code></pre></div>
 
 <h3 id="setupcfg">setup.cfg</h3>
-<p>Файл нужен в основном для pypi, что бы он знал откуда взять описание.</p>
+<p>Файл нужен в основном для pypi, чтобы он знал, откуда взять описание.</p>
 
 <div class="highlight"><pre><code class="language-cfg" data-lang="cfg"><span class="k">[metadata]</span>
 <span class="na">description-file</span> <span class="o">=</span> <span class="s">README.md</span></code></pre></div>
 
 <h3 id="readmemd">README.md</h3>
 
-<p>В readme, укажем основную информацию о нашем чудо-пакете, а так же способы установки, и использования: </p>
+<p>В readme укажем основную информацию о нашем чудо-пакете, а также способы установки и использования: </p>
 
 <pre><code># HMakeCoffee, version 1.0.0
 
@@ -187,11 +186,11 @@ hms = MakeCoffeeService()
 hms.get_cup()
 </code></pre>
 
-<h2 id="section-1">2. Публикуем пакет</h2>
+<h2 id="section-1">2. Публикуем пакет.</h2>
 
 <p>Чтобы публиковать пакеты для pip, нужно зарегаться на сервере <a href="https://pypi.python.org/pypi">pypi</a>.</p>
 
-<p>Дале, что бы не вводить постоянно логин-пасс при деплоее пакета, вынесем их в конфигурационный файл <code>~/.pypirc</code> :</p>
+<p>Далее, чтобы не вводить каждый раз логин-пасс при деплое пакета, вынесем их в конфигурационный файл <code>~/.pypirc</code> :</p>
 
 <div class="highlight"><pre><code class="language-cfg" data-lang="cfg"><span class="k">[distutils]</span>
 <span class="na">index-servers</span> <span class="o">=</span><span class="s"></span>
@@ -208,12 +207,12 @@ hms.get_cup()
 <span class="err">username:</span> <span class="c1">#имя пользователя</span>
 <span class="err">password:</span> <span class="c1">#пароль</span></code></pre></div>
 
-<p>Обратите внимание, мы определяем два сервера : основной <code>pypi</code>, и тестовый <code>pypitest</code>, так что для начала, выложим наш пакет на тест-сервер :</p>
+<p>Обратите внимание, мы определяем два сервера : основной <code>pypi</code> и тестовый <code>pypitest</code>. Так что, для начала, выложим наш пакет на тест-сервер :</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">python setup.py register -r pypitest <span class="c">#регистрируем пакет</span>
 python setup.py sdist upload -r pypitest <span class="c"># выкладываем.</span></code></pre></div>
 
-<p>Затем заходим, проверяем что он корректно выложился, и пушим на основной сервер :</p>
+<p>Затем заходим, проверяем, что он корректно выложился, и пушим на основной сервер :</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">python setup.py register -r pypi
 python setup.py sdist upload -r pypi</code></pre></div>
@@ -236,6 +235,30 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 [jekyll-help]: https://github.com/jekyll/jekyll-help -->
 
   </article>
+  <section class="post-comments">
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+         */
+        /*
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+            var d = document, s = d.createElement('script');
+            
+            s.src = '//EXAMPLE.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+            
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </section>
 
 </div>
 
@@ -290,8 +313,7 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
       </div>
 
       <div class="footer-col  footer-col-3">
-        <p class="text">Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</p>
+        <p class="text">Домашний блог Никиты Харлова</p>
       </div>
     </div>
 

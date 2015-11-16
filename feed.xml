@@ -2,21 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Harlov Home blog</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</description>
-    <link>http://harlov.github.io/</link>
-    <atom:link href="http://harlov.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 15 Nov 2015 23:19:08 +0500</pubDate>
-    <lastBuildDate>Sun, 15 Nov 2015 23:19:08 +0500</lastBuildDate>
+    <description>Домашний блог Никиты Харлова</description>
+    <link>http://blog.harlov.com/</link>
+    <atom:link href="http://blog.harlov.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 16 Nov 2015 22:43:29 +0500</pubDate>
+    <lastBuildDate>Mon, 16 Nov 2015 22:43:29 +0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>Создание python пакета</title>
-        <description>&lt;p&gt;Итак, мы написали полезную батарейку для питона(пусть она например, варит кофе) , и хотим поделиться с ней миром. Какие шаги надо предпринять?&lt;/p&gt;
+        <title>Создание python-пакета</title>
+        <description>&lt;p&gt;Итак, мы написали полезную батарейку для питона(пусть она, например, варит кофе) , и хотим поделиться с ней миром. Какие шаги надо предпринять?&lt;/p&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;1. Структура.&lt;/h2&gt;
 
-&lt;p&gt;Перво-наперво, надо определится со структорой пакета (назовем его для примера, hmakecoffee):&lt;/p&gt;
+&lt;p&gt;Перво-наперво, надо определиться со структурой пакета (назовем его, для примера, &lt;code&gt;hmakecoffee&lt;/code&gt;):&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;hmakecoffee_project /
 	hmakecoffee /
@@ -28,13 +27,13 @@
 	LICENSE.md&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;В директорию hmakecoffe положим код модуля.
-Так же не забудем, для удобства импортировать все классы для внешнего использования ,в файле &lt;code&gt;__init__.py&lt;/code&gt; модуля.&lt;/p&gt;
+Также не забудем импортировать все классы для внешнего использования в файл &lt;code&gt;__init__.py&lt;/code&gt; модуля.&lt;/p&gt;
 
-&lt;p&gt;Далее, разберемся с остальными файлами пакета.&lt;/p&gt;
+&lt;p&gt;Далее, разберемся с остальными состовляющими пакета.&lt;/p&gt;
 
 &lt;h3 id=&quot;setuppy&quot;&gt;setup.py&lt;/h3&gt;
 
-&lt;p&gt;Главный файл нашего модуля. Содержит всю основную мета-информацию о пакете,и файлах входящих в его состав.&lt;/p&gt;
+&lt;p&gt;Точка входа нашего модуля. Содержит всю основную мета-информацию о пакете и файлах, входящих в его состав.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#setup.py&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
@@ -79,14 +78,14 @@
 &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;setupcfg&quot;&gt;setup.cfg&lt;/h3&gt;
-&lt;p&gt;Файл нужен в основном для pypi, что бы он знал откуда взять описание.&lt;/p&gt;
+&lt;p&gt;Файл нужен в основном для pypi, чтобы он знал, откуда взять описание.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cfg&quot; data-lang=&quot;cfg&quot;&gt;&lt;span class=&quot;k&quot;&gt;[metadata]&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;description-file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;README.md&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;readmemd&quot;&gt;README.md&lt;/h3&gt;
 
-&lt;p&gt;В readme, укажем основную информацию о нашем чудо-пакете, а так же способы установки, и использования: &lt;/p&gt;
+&lt;p&gt;В readme укажем основную информацию о нашем чудо-пакете, а также способы установки и использования: &lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;# HMakeCoffee, version 1.0.0
 
@@ -110,11 +109,11 @@ hms = MakeCoffeeService()
 hms.get_cup()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;2. Публикуем пакет&lt;/h2&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;2. Публикуем пакет.&lt;/h2&gt;
 
 &lt;p&gt;Чтобы публиковать пакеты для pip, нужно зарегаться на сервере &lt;a href=&quot;https://pypi.python.org/pypi&quot;&gt;pypi&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Дале, что бы не вводить постоянно логин-пасс при деплоее пакета, вынесем их в конфигурационный файл &lt;code&gt;~/.pypirc&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;Далее, чтобы не вводить каждый раз логин-пасс при деплое пакета, вынесем их в конфигурационный файл &lt;code&gt;~/.pypirc&lt;/code&gt; :&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cfg&quot; data-lang=&quot;cfg&quot;&gt;&lt;span class=&quot;k&quot;&gt;[distutils]&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;index-servers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&lt;/span&gt;
@@ -131,12 +130,12 @@ hms.get_cup()
 &lt;span class=&quot;err&quot;&gt;username:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#имя пользователя&lt;/span&gt;
 &lt;span class=&quot;err&quot;&gt;password:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#пароль&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Обратите внимание, мы определяем два сервера : основной &lt;code&gt;pypi&lt;/code&gt;, и тестовый &lt;code&gt;pypitest&lt;/code&gt;, так что для начала, выложим наш пакет на тест-сервер :&lt;/p&gt;
+&lt;p&gt;Обратите внимание, мы определяем два сервера : основной &lt;code&gt;pypi&lt;/code&gt; и тестовый &lt;code&gt;pypitest&lt;/code&gt;. Так что, для начала, выложим наш пакет на тест-сервер :&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;python setup.py register -r pypitest &lt;span class=&quot;c&quot;&gt;#регистрируем пакет&lt;/span&gt;
 python setup.py sdist upload -r pypitest &lt;span class=&quot;c&quot;&gt;# выкладываем.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Затем заходим, проверяем что он корректно выложился, и пушим на основной сервер :&lt;/p&gt;
+&lt;p&gt;Затем заходим, проверяем, что он корректно выложился, и пушим на основной сервер :&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;python setup.py register -r pypi
 python setup.py sdist upload -r pypi&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -159,8 +158,8 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 [jekyll-help]: https://github.com/jekyll/jekyll-help --&gt;
 </description>
         <pubDate>Sat, 14 Nov 2015 22:48:37 +0500</pubDate>
-        <link>http://harlov.github.io/python/pip/2015/11/14/python-create-packet.html</link>
-        <guid isPermaLink="true">http://harlov.github.io/python/pip/2015/11/14/python-create-packet.html</guid>
+        <link>http://blog.harlov.com/python/pip/2015/11/14/python-create-packet.html</link>
+        <guid isPermaLink="true">http://blog.harlov.com/python/pip/2015/11/14/python-create-packet.html</guid>
         
         
         <category>python</category>
