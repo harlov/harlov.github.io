@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://blog.harlov.com/javascript/angular/2015/11/22/optimize-restangular-getone-requests.html</loc>
+    <loc>http://blog.harlov.com/development/2015/11/22/optimize-restangular-getone-requests.html</loc>
     <lastmod>2015-11-22T04:48:00+05:00</lastmod>
   </url>
   <url>
-    <loc>http://blog.harlov.com/python/pip/2015/11/14/python-create-packet.html</loc>
+    <loc>http://blog.harlov.com/development/2015/11/14/python-create-packet.html</loc>
     <lastmod>2015-11-14T22:48:37+05:00</lastmod>
   </url>
   <url>
@@ -13,5 +13,20 @@
   </url>
   <url>
     <loc>http://blog.harlov.com/</loc>
+  </url>
+  <url>
+    <loc>http://blog.harlov.com/tag/development.html</loc>
+  </url>
+  <url>
+    <loc>http://blog.harlov.com/tag/python.html</loc>
+  </url>
+  <url>
+    <loc>http://blog.harlov.com/tag/pip.html</loc>
+  </url>
+  <url>
+    <loc>http://blog.harlov.com/tag/javascript.html</loc>
+  </url>
+  <url>
+    <loc>http://blog.harlov.com/tag/angular.html</loc>
   </url>
 </urlset>

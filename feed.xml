@@ -5,8 +5,8 @@
     <description>Домашний блог Никиты Харлова</description>
     <link>http://blog.harlov.com/</link>
     <atom:link href="http://blog.harlov.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 22 Nov 2015 10:08:41 +0500</pubDate>
-    <lastBuildDate>Sun, 22 Nov 2015 10:08:41 +0500</lastBuildDate>
+    <pubDate>Sat, 28 Nov 2015 14:50:23 +0500</pubDate>
+    <lastBuildDate>Sat, 28 Nov 2015 14:50:23 +0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -97,13 +97,17 @@
 &lt;p&gt;Конечно, у метода есть ограничения по максимальному количеству элементов, но для некоторых ситуаций такой wrap-сервис весьма удобен.&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Nov 2015 04:48:00 +0500</pubDate>
-        <link>http://blog.harlov.com/javascript/angular/2015/11/22/optimize-restangular-getone-requests.html</link>
-        <guid isPermaLink="true">http://blog.harlov.com/javascript/angular/2015/11/22/optimize-restangular-getone-requests.html</guid>
+        <link>http://blog.harlov.com/development/2015/11/22/optimize-restangular-getone-requests.html</link>
+        <guid isPermaLink="true">http://blog.harlov.com/development/2015/11/22/optimize-restangular-getone-requests.html</guid>
         
+        <category>development</category>
         
         <category>javascript</category>
         
         <category>angular</category>
+        
+        
+        <category>development</category>
         
       </item>
     
@@ -256,13 +260,17 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 [jekyll-help]: https://github.com/jekyll/jekyll-help --&gt;
 </description>
         <pubDate>Sat, 14 Nov 2015 22:48:37 +0500</pubDate>
-        <link>http://blog.harlov.com/python/pip/2015/11/14/python-create-packet.html</link>
-        <guid isPermaLink="true">http://blog.harlov.com/python/pip/2015/11/14/python-create-packet.html</guid>
+        <link>http://blog.harlov.com/development/2015/11/14/python-create-packet.html</link>
+        <guid isPermaLink="true">http://blog.harlov.com/development/2015/11/14/python-create-packet.html</guid>
         
+        <category>development</category>
         
         <category>python</category>
         
         <category>pip</category>
+        
+        
+        <category>development</category>
         
       </item>
     
